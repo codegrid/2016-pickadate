@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>表示位置の補正 | pickadate.js</title>
+    <link rel="stylesheet" href="/pickadate.js/lib/compressed/themes/classic.css">
+    <link rel="stylesheet" href="/pickadate.js/lib/compressed/themes/classic.date.css">
+    <style>
+      .contents{
+        padding:100px 10px;
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contents">contents</div>
+    <label>日付</label>
+    <input class="datepicker"/>
+    <script src="/pickadate.js/tests/jquery.1.7.0.js"></script>
+    <script src="/pickadate.js/lib/compressed/picker.js"></script>
+    <script src="/pickadate.js/lib/compressed/picker.date.js"></script>
+    <script src="/pickadate.js/lib/compressed/picker.time.js"></script>
+    <script src="/demo/ja_JP.js"></script>
+    <script>
+    $('.datepicker').pickadate({
+      onOpen: function() {
+        scrollIntoView( this.$node )
+      }
+    });
+    function scrollIntoView( $node ) {
+      $('html,body').animate({
+          scrollTop: ~~$node.offset().top - 60
+      });
+    }
+    </script>
+  </body>
+</html>
